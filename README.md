@@ -1,0 +1,2 @@
+# hyprladn
+hyprland setup
