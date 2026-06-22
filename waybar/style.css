@@ -1,0 +1,431 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(5, 10, 18, 0.84);
+    color: #6890a8;
+    border-radius: 25px;
+    margin: 20px 90px 0px 90px;
+    border: 1px solid rgba(90, 140, 170, 0.14);
+}
+
+window#waybar.hidden {
+    opacity: 0.15;
+}
+
+/* MEDIA */
+#custom-media-now-playing {
+    color: #b0c4cc;
+    background: rgba(8, 18, 26, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(176, 196, 204, 0.18);
+    font-size: 12px;
+    transition: all 0.25s ease;
+}
+
+#custom-media-now-playing:hover {
+    background: rgba(12, 26, 36, 0.96);
+    color: #ccdde4;
+    border-color: rgba(176, 196, 204, 0.44);
+    box-shadow: 0 0 14px rgba(176, 196, 204, 0.10);
+}
+
+/* WORKSPACES */
+#workspaces {
+    background: rgba(6, 14, 22, 0.82);
+    margin: 5px 3px;
+    padding: 0 8px;
+    border-radius: 22px;
+    border: 1px solid rgba(90, 140, 170, 0.14);
+    transition: all 0.25s ease;
+}
+
+#workspaces:hover {
+    background: rgba(10, 20, 32, 0.96);
+    border-color: rgba(90, 140, 170, 0.34);
+    box-shadow: 0 0 12px rgba(90, 140, 170, 0.08);
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: rgba(90, 140, 170, 0.26);
+    background: transparent;
+    border-radius: 22px;
+    margin: 0 1px;
+    border: none;
+    transition: all 0.25s ease;
+    min-width: 10px;
+    font-size: 11px;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: rgba(90, 140, 170, 0.60);
+}
+
+#workspaces button.active {
+    color: #7aacc0;
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(122, 172, 192, 0.65);
+}
+
+#workspaces button.urgent {
+    color: #8aaa90;
+    text-shadow: 0 0 6px rgba(138, 170, 144, 0.55);
+}
+
+/* SUBMAP */
+#submap {
+    color: #8aaa90;
+    background: rgba(10, 22, 16, 0.88);
+    padding: 4px 14px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(138, 170, 144, 0.16);
+    transition: all 0.25s ease;
+}
+
+#submap:hover {
+    background: rgba(16, 34, 22, 0.96);
+    color: #aacc9a;
+    border-color: rgba(138, 170, 144, 0.42);
+    box-shadow: 0 0 12px rgba(138, 170, 144, 0.10);
+}
+
+/* MEMORY */
+#memory {
+    color: #6890a8;
+    background: rgba(8, 18, 28, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(90, 140, 170, 0.14);
+    transition: all 0.25s ease;
+}
+
+#memory:hover {
+    background: rgba(12, 28, 42, 0.96);
+    color: #96b4c8;
+    border-color: rgba(90, 140, 170, 0.40);
+    box-shadow: 0 0 14px rgba(90, 140, 170, 0.12);
+}
+
+/* CPU */
+#cpu {
+    color: #4a6a58;
+    background: rgba(8, 18, 16, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(74, 106, 88, 0.18);
+    transition: all 0.25s ease;
+}
+
+#cpu:hover {
+    background: rgba(12, 28, 22, 0.96);
+    color: #7a9a86;
+    border-color: rgba(74, 106, 88, 0.46);
+    box-shadow: 0 0 14px rgba(74, 106, 88, 0.10);
+}
+
+/* CLOCK */
+#clock {
+    color: #c8d8e0;
+    background: rgba(8, 20, 28, 0.88);
+    padding: 4px 18px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(200, 216, 224, 0.14);
+    letter-spacing: 0.04em;
+    transition: all 0.25s ease;
+}
+
+#clock:hover {
+    background: rgba(12, 30, 42, 0.96);
+    color: #deeaf0;
+    border-color: rgba(200, 216, 224, 0.40);
+    box-shadow: 0 0 14px rgba(200, 216, 224, 0.10);
+}
+
+/* BACKLIGHT */
+#backlight {
+    color: #8aaabb;
+    background: rgba(8, 20, 26, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(138, 170, 187, 0.16);
+    transition: all 0.25s ease;
+}
+
+#backlight:hover {
+    background: rgba(12, 30, 38, 0.96);
+    color: #aac8d4;
+    border-color: rgba(138, 170, 187, 0.46);
+    box-shadow: 0 0 14px rgba(138, 170, 187, 0.10);
+}
+
+/* PULSEAUDIO */
+#pulseaudio {
+    color: #4a8a8a;
+    background: rgba(6, 18, 20, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(74, 138, 138, 0.16);
+    transition: all 0.25s ease;
+}
+
+#pulseaudio:hover {
+    background: rgba(8, 26, 30, 0.96);
+    color: #7abaaa;
+    border-color: rgba(74, 138, 138, 0.46);
+    box-shadow: 0 0 14px rgba(74, 138, 138, 0.10);
+}
+
+#pulseaudio.muted {
+    color: #243a3e;
+    background: rgba(6, 14, 18, 0.65);
+    border-color: rgba(74, 138, 138, 0.06);
+}
+
+#pulseaudio.muted:hover {
+    background: rgba(8, 22, 26, 0.92);
+    color: #3e5e62;
+    border-color: rgba(74, 138, 138, 0.18);
+}
+
+/* BLUETOOTH */
+#bluetooth {
+    color: #5a8aaa;
+    background: rgba(6, 16, 24, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(90, 138, 170, 0.16);
+    transition: all 0.25s ease;
+}
+
+#bluetooth:hover {
+    background: rgba(8, 24, 36, 0.96);
+    color: #88b0cc;
+    border-color: rgba(90, 138, 170, 0.46);
+    box-shadow: 0 0 14px rgba(90, 138, 170, 0.10);
+}
+
+#bluetooth.connected {
+    color: #5a8aaa;
+    background: rgba(6, 16, 24, 0.90);
+    border-color: rgba(90, 138, 170, 0.28);
+}
+
+#bluetooth.connected:hover {
+    background: rgba(8, 24, 36, 0.96);
+    color: #88b0cc;
+    border-color: rgba(90, 138, 170, 0.50);
+    box-shadow: 0 0 14px rgba(90, 138, 170, 0.12);
+}
+
+#bluetooth.disabled {
+    color: #182832;
+    background: rgba(6, 12, 18, 0.62);
+    border-color: rgba(90, 138, 170, 0.06);
+}
+
+#bluetooth.disabled:hover {
+    background: rgba(8, 18, 28, 0.88);
+    color: #2e4a5a;
+    border-color: rgba(90, 138, 170, 0.14);
+}
+
+/* NETWORK */
+#network {
+    color: #6890a8;
+    background: rgba(6, 18, 26, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(90, 140, 170, 0.18);
+    transition: all 0.25s ease;
+}
+
+#network:hover {
+    background: rgba(8, 26, 38, 0.96);
+    color: #96b8cc;
+    border-color: rgba(90, 140, 170, 0.46);
+    box-shadow: 0 0 14px rgba(90, 140, 170, 0.12);
+}
+
+#network.disconnected {
+    color: #7a9882;
+    background: rgba(10, 18, 14, 0.85);
+    border-color: rgba(122, 152, 130, 0.16);
+}
+
+#network.disconnected:hover {
+    background: rgba(14, 26, 18, 0.96);
+    color: #9ab89e;
+    border-color: rgba(122, 152, 130, 0.42);
+    box-shadow: 0 0 12px rgba(122, 152, 130, 0.08);
+}
+
+/* BATTERY */
+#battery {
+    color: #8ab0be;
+    background: rgba(8, 20, 26, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(138, 176, 190, 0.16);
+    transition: all 0.25s ease;
+}
+
+#battery:hover {
+    background: rgba(12, 30, 38, 0.96);
+    color: #aaccd8;
+    border-color: rgba(138, 176, 190, 0.46);
+    box-shadow: 0 0 14px rgba(138, 176, 190, 0.10);
+}
+
+#battery.charging {
+    color: #4a8a70;
+    background: rgba(8, 20, 16, 0.88);
+    border-color: rgba(74, 138, 112, 0.26);
+}
+
+#battery.charging:hover {
+    background: rgba(10, 30, 22, 0.96);
+    color: #7ab09a;
+    border-color: rgba(74, 138, 112, 0.50);
+    box-shadow: 0 0 14px rgba(74, 138, 112, 0.12);
+}
+
+#battery.warning:not(.charging) {
+    color: #8a9a78;
+    background: rgba(14, 22, 12, 0.88);
+    border-color: rgba(138, 154, 120, 0.18);
+}
+
+#battery.warning:not(.charging):hover {
+    background: rgba(20, 32, 14, 0.96);
+    color: #aabb96;
+    border-color: rgba(138, 154, 120, 0.44);
+    box-shadow: 0 0 12px rgba(138, 154, 120, 0.08);
+}
+
+#battery.critical:not(.charging) {
+    color: #6a8878;
+    background: rgba(10, 20, 16, 0.88);
+    border-color: rgba(106, 136, 120, 0.24);
+    animation: blink 1s steps(1) infinite;
+}
+
+#battery.critical:not(.charging):hover {
+    background: rgba(14, 30, 22, 0.96);
+    color: #8aaa98;
+    border-color: rgba(106, 136, 120, 0.50);
+    animation: none;
+}
+
+/* NOTIFICATION */
+#custom-notification {
+    color: #a0b8c4;
+    background: rgba(8, 18, 24, 0.88);
+    padding: 4px 16px;
+    margin: 5px 3px;
+    border-radius: 22px;
+    border: 1px solid rgba(160, 184, 196, 0.10);
+    font-size: 15px;
+    transition: all 0.25s ease;
+}
+
+#custom-notification:hover {
+    background: rgba(10, 26, 34, 0.96);
+    color: #bcd4de;
+    border-color: rgba(160, 184, 196, 0.32);
+    box-shadow: 0 0 12px rgba(160, 184, 196, 0.08);
+}
+
+#custom-notification.notification {
+    color: #c0d4dc;
+    background: rgba(8, 22, 28, 0.90);
+    border-color: rgba(192, 212, 220, 0.22);
+}
+
+#custom-notification.notification:hover {
+    background: rgba(10, 30, 40, 0.96);
+    color: #d6e8ee;
+    border-color: rgba(192, 212, 220, 0.46);
+    box-shadow: 0 0 14px rgba(192, 212, 220, 0.10);
+}
+
+#custom-notification.dnd-none {
+    color: #2e4452;
+    background: rgba(6, 14, 20, 0.70);
+    border-color: rgba(46, 68, 82, 0.10);
+}
+
+#custom-notification.dnd-none:hover {
+    background: rgba(8, 20, 28, 0.92);
+    color: #4e6878;
+    border-color: rgba(46, 68, 82, 0.28);
+}
+
+#custom-notification.dnd-notification {
+    color: #7aa8b8;
+    background: rgba(8, 20, 26, 0.88);
+    border-color: rgba(122, 168, 184, 0.18);
+}
+
+#custom-notification.dnd-notification:hover {
+    background: rgba(10, 28, 36, 0.96);
+    color: #9ac4d0;
+    border-color: rgba(122, 168, 184, 0.40);
+    box-shadow: 0 0 12px rgba(122, 168, 184, 0.08);
+}
+
+#custom-notification.inhibited-none {
+    color: #8aaabb;
+    background: rgba(8, 18, 24, 0.75);
+    border-color: rgba(138, 170, 187, 0.08);
+}
+
+#custom-notification.inhibited-notification {
+    color: #c0d4dc;
+    background: rgba(8, 22, 28, 0.90);
+    border-color: rgba(192, 212, 220, 0.20);
+}
+
+@keyframes blink {
+    0% {
+        color: #6a8878;
+        border-color: rgba(106, 136, 120, 0.24);
+        background: rgba(10, 20, 16, 0.88);
+    }
+    100% {
+        color: #223830;
+        border-color: rgba(106, 136, 120, 0.06);
+        background: rgba(6, 14, 18, 0.80);
+    }
+}
+
+tooltip {
+    background: rgba(4, 10, 16, 0.96);
+    border: 1px solid rgba(90, 140, 170, 0.16);
+    border-radius: 16px;
+    color: #6890a8;
+    padding: 7px 12px;
+}
+
+tooltip label {
+    color: #6890a8;
+    font-size: 12px;
+    padding: 2px 5px;
+}
